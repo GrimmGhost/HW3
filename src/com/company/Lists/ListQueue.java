@@ -12,24 +12,26 @@ public class ListQueue extends LinkedList implements Queue
     @Override
     public boolean isEmpty()
     {
-        return false;
+        return getSize() != 0;
     }
 
     @Override
     public Object peek() throws EmptyQueueException
     {
-        return null;
+        return getHead();
     }
 
     @Override
     public Object deQueue() throws EmptyQueueException
     {
-        return null;
+        // remove and return item
+
+        return removeFront();
     }
 
     @Override
     public void enQueue(Object item)
     {
-
+        insertFront(item);
     }
 }
