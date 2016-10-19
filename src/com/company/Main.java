@@ -1,16 +1,18 @@
 package com.company;
 
-import com.company.Lists.Infix;
-import com.company.Lists.LinkedList;
-import com.company.Lists.Postfix;
+import com.company.lists.Infix;
+import com.company.lists.LinkedList;
+import com.company.lists.Postfix;
+import com.company.utils.FileReader;
 
 public class Main
 {
 
     public static void main(String[] args)
     {
-
+        run(FileReader.lineSplit("infix"),FileReader.lineSplit("values"));
     }
+
     public static void run(String infixFile, String operandsFile)
     {
         // make operands LinkedList

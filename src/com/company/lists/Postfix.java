@@ -1,4 +1,4 @@
-package com.company.Lists;
+package com.company.lists;
 
 import com.company.interfaces.List;
 import com.company.interfaces.Queue;

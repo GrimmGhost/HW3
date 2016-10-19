@@ -1,9 +1,4 @@
-package com.company.Lists;
-
-import com.company.Lists.ListQueue;
-import com.company.Lists.ListStack;
-import com.company.Lists.Postfix;
-import com.company.Operand;
+package com.company.lists;
 
 /**
  * Created by fili_ on 10/12/2016.

@@ -1,4 +1,4 @@
-package com.company.Lists;
+package com.company.lists;
 
 /**
  * Created by fili_ on 10/12/2016.

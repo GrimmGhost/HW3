@@ -1,4 +1,4 @@
-package com.company.Lists;
+package com.company.lists;
 
 import com.company.exceptions.EmptyQueueException;
 import com.company.interfaces.Queue;

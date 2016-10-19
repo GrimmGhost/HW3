@@ -1,7 +1,6 @@
 package com.company;
 
-import com.company.Lists.Infix;
-import com.company.Lists.Postfix;
+import com.company.lists.Infix;
 
 /**
  * Created by fili_ on 10/12/2016.

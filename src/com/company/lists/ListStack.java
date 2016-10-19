@@ -1,4 +1,4 @@
-package com.company.Lists;
+package com.company.lists;
 
 import com.company.exceptions.EmptyStackException;
 import com.company.interfaces.Stack;
