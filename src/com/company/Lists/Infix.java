@@ -23,6 +23,8 @@ public class Infix
 
     public Postfix toPostfix()
     {
+
+        // traverse characters and
         return null;
     }
 }

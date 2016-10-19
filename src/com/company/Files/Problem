@@ -1,0 +1,80 @@
+Problem
+
+In this assignment, you will implement an algorithm that employs a stack and queue to convert infix expressions to postfix and then evaluate the postfix expression.
+
+Requirements
+
+Your program must:
+
+read the infix expressions from an input file (see example infix.dat below);
+print the infix expressions to console;
+convert the infix expressions to postfix;
+print the postfix expressions to console;
+read the operand values from an input file named (see example values.dat below);
+print the operand values to console;
+use the operand values to evaluate the postfix expressions;
+and finally print the result of evaluation to console.
+
+
+infix.dat :
+
+one infix expression per line
+can have 1 or more lines
+expressions can have spaces
+only single characters for operands: a, b, c, ...
+can contain only the following operators: +  -  *  /
+parentheses to specify order of operation
+a + b
+a*(b+c)
+
+
+values.dat :
+
+only one entry per operand
+one <operand> <value> pair per line
+values can be floating point
+a 3.6
+b 5.2
+c 2.0
+
+
+Design
+
+Infix to Postfix conversion:
+
+The stack will contain operators, while the queue will contain the final postfix expression.
+Read the infix expression character by character, left to right
+If the scanned character is an operand, enqueue it
+If the scanned character is an open parenthesis, push it to the stack.
+If the scanned character is a close parenthesis, pop all operators from the stack and enqueue them until the opening parenthesis is reached.
+Discard the open and close parentheses.
+If the scanned character is an operator and the stack is empty or there is an open parenthesis on the top of the stack, push the scanned character on the stack.
+If the scanned character is an operator and the stack is not empty, compare the precedence of the scanned character to that on the top of the stack:
+If the precedence on the top of the stack is higher than or equal to the scanned character, pop the stack and enqueue the popped value
+Otherwise push the scanned character on the stack.
+Repeat this as long as the stack is not empty and character on the top of the stack has a higher precedence over the scanned character.
+Repeat 3-7 until all characters in input string have been scanned.
+If stack is not empty, pop all remaining operators and enqueue them.
+Once complete, the queue contains the postfix expression.
+Postfix evaluation:
+
+While the queue is not empty:
+
+Enqueue each character of the postfix expression
+While the queue is not empty:
+Dequeue from the queue
+If an operand is dequeued, find its value and push it on the stack.
+If an operator is dequeued, pop the stack twice, perform the operation and push result.
+Once complete, the stack should only the result of the expression.
+
+Implementation & Testing
+
+Focus your implementation on both efficiency and proper object-oriented design.
+Use good programming style when implementing your program: descriptive names for methods, variables, and constants; proper indention for code blocks; etc.
+It is also advisable to save backup copies (e.g. github) of your program periodically as you work, so that you can restore to stable build if you wanted to experiment with something new or to avoid losing your work if something goes wrong.
+Implement your program incrementally; adding code, compiling, writing comments, and debugging a little bit at a time. This will help ensure your program is always functional (can "do something"), even if it is not complete.
+Once implemented, test your program to verify that it satisfies all of the requirements listed above, including error handling. Be sure to test using several different expressions and operand values.
+Evaluation
+
+For credit, each student must submit their source code through Moodle and demo their work to the instructor in class by the due date.
+Solutions will be graded based on: program correctness, design, coding style, and testing.
