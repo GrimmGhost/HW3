@@ -9,20 +9,23 @@ import java.io.IOException;
  */
 public class FileReader
 {
-    public static String lineSplit(String fileName)
+    public StringBuilder stringBuilder(String fileName)
     {
-        File file = new File("src/com.company/files/" + fileName);
+        StringBuilder stringStorage = new StringBuilder();
+        File file = new File("src/com/company/files/" + fileName);
         try(BufferedReader br = new BufferedReader(new java.io.FileReader(file)))
         {
             for(String line; (line = br.readLine()) != null; )
             {
                 System.out.println(line);
+                stringStorage.append(line + "\\|");
             }
             // line is not visible here.
         } catch (IOException e)
         {
             e.printStackTrace();
+
         }
-        return " ";
+        return stringStorage;
     }
 }

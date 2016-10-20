@@ -25,7 +25,6 @@ public class ListQueue extends LinkedList implements Queue
     public Object deQueue() throws EmptyQueueException
     {
         // remove and return item
-
         return removeFront();
     }
 

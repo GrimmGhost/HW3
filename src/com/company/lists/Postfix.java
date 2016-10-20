@@ -15,7 +15,7 @@ public class Postfix
 
     public Postfix(String expression)
     {
-
+        System.out.println(expression);
     }
 
     public double evaluate(List operands)
