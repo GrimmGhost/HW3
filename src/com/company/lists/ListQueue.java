@@ -31,6 +31,8 @@ public class ListQueue extends LinkedList implements Queue
     @Override
     public void enQueue(Object item)
     {
+        //System.out.println((Character) item);
         insertFront(item);
+        System.out.println("enQueued: " + item);
     }
 }
