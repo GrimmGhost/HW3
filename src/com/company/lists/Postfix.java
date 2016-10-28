@@ -15,11 +15,12 @@ public class Postfix
 
     public Postfix(String expression)
     {
-        System.out.println(expression);
+        System.out.println("PostFix: " + expression);
     }
 
     public double evaluate(List operands)
     {
+        
         return 0.0;
     }
 }

@@ -1,18 +1,18 @@
 package com.company.lists;
 
 import com.company.interfaces.List;
+import com.company.interfaces.Queue;
 
 /**
  * Created by fili_ on 10/12/2016.
  */
 public class LinkedList implements List
 {
-    Node dataNode = new Node();
-    Node headNode = null;
-    Node tailNode = null;
-    // use counter for LinkedList size
-    // keeps me from having to traverse the List to get size
-    int size = 0;
+    //Node dataNode = new Node();
+    private Node headNode = null;
+    private Node tailNode = null;
+    // LinkedList size
+    private int size = 0;
 
     protected Node getHead()
     {
@@ -25,7 +25,6 @@ public class LinkedList implements List
         return size;
     }
 
-    // insert to headNode
     @Override
     public void insertFront(Object item)
     {
@@ -35,7 +34,15 @@ public class LinkedList implements List
             headNode.setData(item);
             tailNode = headNode;
             size++;
-        }else
+        }else if (this instanceof ListQueue)
+        {
+            // instance of queue you will change the tail but leave the head in the same place
+            Node node = new Node();
+            node.setData(item);
+            tailNode.setNext(node);
+            tailNode = node;
+            size++;
+        }else // has to be an instance of ListStack
         {
             Node node = new Node();
             node.setData(item);
@@ -72,6 +79,7 @@ public class LinkedList implements List
     {
         Object item = headNode.getData();
         headNode = headNode.getNext();
+        size--;
         return item;
     }
 
@@ -82,7 +90,6 @@ public class LinkedList implements List
         tailNode = tailNode.getNext();
         return item;
     }
-
 
 // what is this for?
 // is this for test purposes?

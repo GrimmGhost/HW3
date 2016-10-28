@@ -9,9 +9,9 @@ import com.company.exceptions.EmptyQueueException;
 
 public interface Queue
 {
-    public int getSize();
-    public boolean isEmpty();
-    public Object peek() throws EmptyQueueException;
-    public Object deQueue() throws EmptyQueueException;
-    public void enQueue(Object item);
+    int getSize();
+    boolean isEmpty();
+    Object peek() throws EmptyQueueException;
+    Object deQueue() throws EmptyQueueException;
+    void enQueue(Object item);
 }

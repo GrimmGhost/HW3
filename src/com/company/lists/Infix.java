@@ -22,7 +22,7 @@ public class Infix
         System.out.println("Current Expression " +expression);
         System.out.println("------------------");
 
-        toPostfix();
+        //toPostfix();
     }
 
     public Postfix toPostfix()
@@ -30,55 +30,94 @@ public class Infix
         // traverse characters and
 
         // convert queue into String
+        queue = new ListQueue();
+        stack = new ListStack();
+
         for (int charNumber = 0; charNumber < expression.length(); charNumber++)
         {
-            queue = new ListQueue();
-            stack = new ListStack();
             Object item = expression.charAt(charNumber);
-            System.out.println(item);
+            //System.out.println(item);
 
-            if ((Character) item == '+' || (Character) item == '-' || (Character) item == '*'
-                    || (Character) item == '/' || (Character) item == '(')
+            //if ( item.toString() == "+" || item == "-" || item == "*"
+            //        || item == "/" || item == "(")
+            if (item.toString().matches("[+-/*(]"))
             {
-                //System.out.println(expression.charAt(charNumber));
+                System.out.println(expression.charAt(charNumber));
                 stack.push(item);
-            }else if (Character.isLetter((Character) item))
+            }else if (item.toString().matches("[a-zA-Z]"))
             {
                 //System.out.println(expression.charAt(charNumber));
                 queue.enQueue(item);
-            }else if ((Character) item == ')')
+            }else if (item.toString().matches("[)]"))
             {
                 // pop from stack until open parenthesis is found
                 try
                 {
-                    while ((Character) stack.peek() != '(')
+                    // This is the bug
+                    // fix this
+                    // i don't know how
+
+                    // check if open parenthesis
+                    // pop and enqueue
+                    // back to first step0
+
+                    // check if next in stack is a open parenthesis
+                    Node peek = (Node) stack.peek();
+                    Object topStack = peek.getData();
+
+                    // BUG BUG
+                    // WHY YOU BUG
+                    // RAID THIS NOW!!!
+
+                    while (!topStack.toString().equals("("))
+                    //while (!topStack.equals("("))
+                    //while (!"(".equals(topStack))
+                    //while (topStack != "(")
                     {
                         queue.enQueue(stack.pop());
+                        peek = (Node) stack.peek();
+                        topStack = peek.getData();
                     }
-
-                    //remove open parenthesis
                     stack.pop();
                 } catch (EmptyStackException e)
                 {
                     e.printStackTrace();
                 }
             }
-
             // Convert into String
-            StringBuilder sb = new StringBuilder();
-            while (!queue.isEmpty())
-            {
-                try
-                {
-                    String op = (String) queue.deQueue();
-                    sb.append(op);
-                } catch (EmptyQueueException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            System.out.print(sb);
+            //StringBuilder sb = new StringBuilder();
         }
-        return null;
+        // while the stack still has values
+        // pop until empty
+        try
+        {
+            //Node peek = (Node) stack.peek();
+            //Object topStack = peek.getData();
+            //Boolean emptyStack = stack.isEmpty();
+
+            while (!stack.isEmpty())
+            {
+                queue.enQueue(((Node) stack.peek()).getData());
+                stack.pop();
+            }
+        } catch (EmptyStackException e)
+        {
+            e.printStackTrace();
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (!queue.isEmpty())
+        {
+            try
+            {
+                String op = queue.deQueue().toString();
+                sb.append(op);
+            } catch (EmptyQueueException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        //System.out.print(sb);
+        return new Postfix(sb.toString());
     }
 }

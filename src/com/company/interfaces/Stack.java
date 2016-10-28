@@ -6,10 +6,10 @@ import com.company.exceptions.EmptyStackException;
  */
 public interface Stack
 {
-    public int getSize();
-    public boolean isEmpty();
-    public Object peek() throws EmptyStackException;
-    public Object pop() throws EmptyStackException;
-    public void push(Object item);
+    int getSize();
+    boolean isEmpty();
+    Object peek() throws EmptyStackException;
+    Object pop() throws EmptyStackException;
+    void push(Object item);
 
 }

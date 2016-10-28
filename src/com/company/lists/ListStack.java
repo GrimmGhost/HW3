@@ -12,7 +12,7 @@ public class ListStack extends LinkedList implements Stack
     @Override
     public boolean isEmpty()
     {
-        return getSize() != 0;
+        return getSize() <= 0;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ListStack extends LinkedList implements Stack
     public Object pop() throws EmptyStackException
     {
         // remove top then return it
-        return removeBack();
+        return removeFront();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ListStack extends LinkedList implements Stack
         // if
 
         // insertFront
-        insertBack(item);
+        insertFront(item);
         System.out.println("pushed: " + item);
     }
 }

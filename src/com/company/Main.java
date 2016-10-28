@@ -22,6 +22,5 @@ public class Main
         //String d = new String();
         Infix infix = new Infix("a*(b+c)");
         Postfix postfix = infix.toPostfix();
-
     }
 }

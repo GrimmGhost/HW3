@@ -5,10 +5,10 @@ package com.company.interfaces;
  */
 public interface List
 {
-    public int getSize();
-    public void insertFront(Object item);
-    public void insertBack(Object item);
-    public Object removeFront();
-    public Object removeBack();
-    public Object get(int index);
+    int getSize();
+    void insertFront(Object item);
+    void insertBack(Object item);
+    Object removeFront();
+    Object removeBack();
+    Object get(int index);
 }

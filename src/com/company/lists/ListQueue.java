@@ -12,7 +12,7 @@ public class ListQueue extends LinkedList implements Queue
     @Override
     public boolean isEmpty()
     {
-        return getSize() != 0;
+        return getSize() <= 0;
     }
 
     @Override
