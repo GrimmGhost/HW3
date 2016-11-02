@@ -7,6 +7,7 @@ public class EmptyQueueException extends Exception
 {
     public EmptyQueueException(String message)
     {
-        super(message);
+        //super(message);
+        System.out.print("The DMV is closed");
     }
 }

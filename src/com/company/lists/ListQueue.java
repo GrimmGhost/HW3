@@ -33,6 +33,6 @@ public class ListQueue extends LinkedList implements Queue
     {
         //System.out.println((Character) item);
         insertFront(item);
-        System.out.println("enQueued: " + item);
+        //System.out.println("enQueued: " + item);
     }
 }

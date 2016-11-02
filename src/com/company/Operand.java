@@ -5,13 +5,26 @@ package com.company;
  */
 public class Operand
 {
-    private String variable()
+    private String variable;
+    private double value;
+
+    public String getVariable()
     {
-        return null;
+        return variable;
     }
 
-    private double value()
+    public void setVariable(String variable)
     {
-        return 0.0;
+        this.variable = variable;
+    }
+
+    public double getValue()
+    {
+        return value;
+    }
+
+    public void setValue(double value)
+    {
+        this.value = value;
     }
 }

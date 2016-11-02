@@ -37,6 +37,6 @@ public class ListStack extends LinkedList implements Stack
 
         // insertFront
         insertFront(item);
-        System.out.println("pushed: " + item);
+        //System.out.println("pushed: " + item);
     }
 }

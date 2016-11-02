@@ -18,9 +18,9 @@ public class Infix
     {
         this.expression = expression;
 
-        System.out.println("------------------");
+        System.out.println("//================= infixFile ===================//");
         System.out.println("Current Expression " +expression);
-        System.out.println("------------------");
+        System.out.println("---------------------------------------------------");
 
         //toPostfix();
     }
@@ -42,7 +42,7 @@ public class Infix
             //        || item == "/" || item == "(")
             if (item.toString().matches("[+-/*(]"))
             {
-                System.out.println(expression.charAt(charNumber));
+                //System.out.println(expression.charAt(charNumber));
                 stack.push(item);
             }else if (item.toString().matches("[a-zA-Z]"))
             {
